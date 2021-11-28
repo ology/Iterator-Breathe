@@ -102,7 +102,7 @@ Default: C<100>
 
 has top => (
     is      => 'rw',
-    isa     => sub { croak "$_[0] is not an integer" unless $_[0] =~ /^\d+$/ },
+    isa     => sub { croak "$_[0] is not a number" unless looks_like_number( $_[0] ) },
     default => sub { 100 },
 );
 
