@@ -13,7 +13,15 @@ use namespace::clean;
 
   use Iterator::Breathe;
 
-  my $iter = Iterator::Breathe->new(verbose => 1);
+  my $it = Iterator::Breathe->new(
+    top    => 255,
+    bottom => -1,
+  );
+
+  while ( 1 ) {
+    $it->iterate
+    say $it->i;
+  }
 
 =head1 DESCRIPTION
 
@@ -24,7 +32,7 @@ wave-like fashion.
 
 =head2 direction
 
-  $direction = $iter->direction;
+  $direction = $it->direction;
 
 Return the current value of C<direction>.
 
@@ -40,7 +48,7 @@ has direction => (
 
 =head2 i
 
-  $i = $iter->i;
+  $i = $it->i;
 
 Return the current value of C<i>.
 
@@ -50,13 +58,13 @@ Default: C<0>
 
 has i => (
     is      => 'rw',
-    isa     => sub { croak "$_[0] is not an integer" unless $_[0] =~ /^\d+$/ },
+    isa     => sub { croak "$_[0] is not an integer" unless $_[0] =~ /^-?\d+$/ },
     default => sub { 0 },
 );
 
 =head2 bottom
 
-  $bottom = $iter->bottom;
+  $bottom = $it->bottom;
 
 Return the current value of C<bottom>.
 
@@ -66,13 +74,13 @@ Default: C<0>
 
 has bottom => (
     is      => 'rw',
-    isa     => sub { croak "$_[0] is not an integer" unless $_[0] =~ /^\d+$/ },
+    isa     => sub { croak "$_[0] is not an integer" unless $_[0] =~ /^-?\d+$/ },
     default => sub { 0 },
 );
 
 =head2 top
 
-  $top = $iter->top;
+  $top = $it->top;
 
 Return the current value of C<top>.
 
@@ -88,7 +96,7 @@ has top => (
 
 =head2 verbose
 
-  $verbose = $iter->verbose;
+  $verbose = $it->verbose;
 
 Show progress.
 
@@ -106,13 +114,13 @@ has verbose => (
 
 =head2 new
 
-  $iter = Iterator::Breathe->new(verbose => 1);
+  $it = Iterator::Breathe->new(verbose => 1);
 
 Create a new C<Iterator::Breathe> object.
 
 =head2 iterate
 
-  $i = $iter->iterate;
+  $i = $it->iterate;
 
 =cut
 
