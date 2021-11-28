@@ -17,7 +17,8 @@ use namespace::clean;
 
 =head1 DESCRIPTION
 
-C<Iterator::Breathe> increments and decrements an iterator value in a "wave" fashion.
+C<Iterator::Breathe> increments and decrements an iterator value in a
+wave-like fashion.
 
 =head1 ATTRIBUTES
 
