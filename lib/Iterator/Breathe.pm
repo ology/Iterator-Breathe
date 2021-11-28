@@ -143,7 +143,7 @@ has verbose => (
 
 =head2 new
 
-  $it = Iterator::Breathe->new(verbose => 1);
+  $it = Iterator::Breathe->new( %arguments );
 
 Create a new C<Iterator::Breathe> object.
 
@@ -188,5 +188,7 @@ __END__
 =head1 SEE ALSO
 
 L<Moo>
+
+L<Scalar::Util>
 
 =cut
