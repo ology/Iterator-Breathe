@@ -20,6 +20,12 @@ use namespace::clean;
     bottom => -1,
   );
 
+  $it = Iterator::Breathe->new(
+    top    => 6.28,
+    bottom => -3.14,
+    step   => 0.1,
+  );
+
   while ( 1 ) {
     $it->iterate;
     say $it->i;
@@ -37,7 +43,7 @@ wave-like fashion.
   $direction = $it->direction;
   $it->direction($dir);
 
-Return the current value of C<direction>.
+Return or set the current value of C<direction>.
 
 Default: C<1>
 
@@ -54,7 +60,7 @@ has direction => (
   $i = $it->i;
   $it->i($n);
 
-Return the current value of C<i>.
+Return or set the current value of C<i>.
 
 Default: C<0>
 
@@ -71,7 +77,7 @@ has i => (
   $bottom = $it->bottom;
   $it->bottom($x);
 
-Return the current value of C<bottom>.
+Return or set the current value of C<bottom>.
 
 Default: C<0>
 
@@ -88,7 +94,7 @@ has bottom => (
   $top = $it->top;
   $it->top($y);
 
-Return the current value of C<top>.
+Return or set the current value of C<top>.
 
 Default: C<100>
 
@@ -98,6 +104,23 @@ has top => (
     is      => 'rw',
     isa     => sub { croak "$_[0] is not an integer" unless $_[0] =~ /^\d+$/ },
     default => sub { 100 },
+);
+
+=head2 step
+
+  $step = $it->step;
+  $it->step($z);
+
+Return or set the current value of C<step>.
+
+Default: C<1>
+
+=cut
+
+has step => (
+    is      => 'rw',
+    isa     => sub { croak "$_[0] is not a number" unless looks_like_number( $_[0] ) },
+    default => sub { 1 },
 );
 
 =head2 verbose
