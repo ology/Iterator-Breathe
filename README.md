@@ -1,2 +1,2 @@
-# Iterator-Breathe
-Iterate a counter up and back
+# Iterator::Breathe
+Iterate a counter up and back with perl
