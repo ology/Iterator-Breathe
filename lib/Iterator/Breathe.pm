@@ -2,7 +2,7 @@ package Iterator::Breathe;
 
 # ABSTRACT: Iterate a counter up and back
 
-our $VERSION = '0.0100';
+our $VERSION = '0.0200';
 
 use Carp qw( croak );
 use Moo;
