@@ -160,22 +160,22 @@ sub iterate {
 
   if ( $self->direction ) {
     if ( $self->i >= $self->top ) {
-      $self->i( $self->i - 1 );
+      $self->i( $self->i - $self->step );
       $self->direction( 0 );
       print "Change direction to down.\n" if $self->verbose;
     }
     else {
-      $self->i( $self->i + 1 );
+      $self->i( $self->i + $self->step );
     }
   }
   else {
     if ( $self->i <= $self->bottom ) {
-      $self->i( $self->i + 1 );
+      $self->i( $self->i + $self->step );
       $self->direction( 1 );
       print "Change direction to up.\n" if $self->verbose;
     }
     else {
-      $self->i( $self->i - 1 );
+      $self->i( $self->i - $self->step );
     }
   }
 
