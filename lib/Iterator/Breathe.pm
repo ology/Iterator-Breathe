@@ -4,8 +4,10 @@ package Iterator::Breathe;
 
 our $VERSION = '0.0100';
 
-use Carp qw(croak);
+use Carp qw( croak );
 use Moo;
+use Scalar::Util qw( looks_like_number );
+
 use strictures 2;
 use namespace::clean;
 
@@ -60,7 +62,7 @@ Default: C<0>
 
 has i => (
     is      => 'rw',
-    isa     => sub { croak "$_[0] is not an integer" unless $_[0] =~ /^-?\d+$/ },
+    isa     => sub { croak "$_[0] is not a number" unless looks_like_number( $_[0] ) },
     default => sub { 0 },
 );
 
@@ -77,7 +79,7 @@ Default: C<0>
 
 has bottom => (
     is      => 'rw',
-    isa     => sub { croak "$_[0] is not an integer" unless $_[0] =~ /^-?\d+$/ },
+    isa     => sub { croak "$_[0] is not a number" unless looks_like_number( $_[0] ) },
     default => sub { 0 },
 );
 
