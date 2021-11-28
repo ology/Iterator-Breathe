@@ -33,6 +33,7 @@ wave-like fashion.
 =head2 direction
 
   $direction = $it->direction;
+  $it->direction($dir);
 
 Return the current value of C<direction>.
 
@@ -49,6 +50,7 @@ has direction => (
 =head2 i
 
   $i = $it->i;
+  $it->i($n);
 
 Return the current value of C<i>.
 
@@ -65,6 +67,7 @@ has i => (
 =head2 bottom
 
   $bottom = $it->bottom;
+  $it->bottom($x);
 
 Return the current value of C<bottom>.
 
@@ -81,6 +84,7 @@ has bottom => (
 =head2 top
 
   $top = $it->top;
+  $it->top($y);
 
 Return the current value of C<top>.
 
