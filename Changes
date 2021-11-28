@@ -2,6 +2,7 @@ Revision history for Iterator-Breathe
 
 {{$NEXT}}
     - Improve documentation.
+    - Add an iteration step size, instead of always using 1.
 
 0.0100 2021-11-28 08:41:14
     - Mint with Dist::Zilla.
