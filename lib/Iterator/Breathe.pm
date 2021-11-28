@@ -21,7 +21,7 @@ use namespace::clean;
   );
 
   while ( 1 ) {
-    $it->iterate
+    $it->iterate;
     say $it->i;
   }
 
