@@ -45,7 +45,7 @@ wave-like fashion.
 
 Return or set the current value of C<direction>.
 
-Default: C<1>
+Default: C<1> (1=up, 0=down)
 
 =cut
 
